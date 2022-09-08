@@ -3,14 +3,6 @@ const router = express.Router();
 const Todos = require('../models/todos.js');
 // Remember INDUCES
 
-// Seeding...
-router.get('/seed', async (req, res) => {
-    await Inventory.deleteMany({})
-    await Inventory.create(inventoryData);
-    res.redirect("/api/v1/music")
-});
-
-
 // Index
 router.get('/', (req, res)=>{
     Todos.find({}, (err, foundTodos)=>{

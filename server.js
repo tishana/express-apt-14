@@ -32,6 +32,8 @@ app.use(cors())
 const todosController = require('./controllers/todos.js');
 
 app.use('/todos', todosController);
+
+// Seeding the db
 app.get('/seed', async (req, res) => {
   await Todos.deleteMany({});
   await Todos.insertMany(todosData);
